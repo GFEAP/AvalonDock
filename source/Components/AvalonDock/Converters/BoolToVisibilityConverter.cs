@@ -20,7 +20,9 @@ namespace AvalonDock.Converters
 	/// </summary>
 	[ValueConversion(typeof(bool), typeof(Visibility))]
 	public class BoolToVisibilityConverter : MarkupExtension, IValueConverter
-	{
+    {
+        public static BoolToVisibilityConverter Default = new BoolToVisibilityConverter();
+
 		/// <inheritdoc />
 		/// <summary>
 		/// Converts a bool value into a <see cref="Visibility"/> value.

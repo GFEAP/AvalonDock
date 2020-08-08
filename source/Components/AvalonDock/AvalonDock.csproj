@@ -47,6 +47,9 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="xcopy /y /i /s $(ProjectDir)bin\Debug\net4\*.* &quot;%25userprofile%25\documents\github\GeeSuiteFramework2.0&quot;" />
+  </Target>
 
   <!--PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DefineConstants>TRACE;DEBUG</DefineConstants>
